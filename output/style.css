@@ -1,0 +1,19 @@
+
+.jumbotron {
+    background-color:lightsteelblue;
+}
+
+.card-header {
+    background-color: lightgreen;
+    text-align: center;
+        
+} 
+.card {
+    box-shadow: 3px 3px 20px 5px gray;
+    width: 30%;
+    margin: 30px;
+
+    
+}
+
+

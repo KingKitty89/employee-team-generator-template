@@ -13,15 +13,16 @@ const { type } = require("os");
 
 let team = [];
 
+
 const questions = [
     {
         type: "input",
         message: "Please enter employee's full name:",
-        name: "fullName",
+        name: "name",
     },
     {
         type: "input",
-        message: "Please enter employee's id numer:",
+        message: "Please enter employee's id number:",
         name: "id",
     },
     {
@@ -37,6 +38,27 @@ const questions = [
     }
 ];
 
+function createTeam() {
+    inquirer
+        .prompt([
+            {
+                type: "list",
+                message: "Choose either build team to add team members or create team template:",
+                choices: ["Add to Team", "Finish Team"],
+                name: "teamMode"
+            }
+        ])
+        .then(res => {
+            switch (res.teamMode) {
+                case "Finish Team":
+                    buildTeam();
+                    break;
+                case "Add to Team":
+                askQuestions();
+            }
+        })
+};
+
 function askQuestions() {
     inquirer
         .prompt(questions)
@@ -51,26 +73,30 @@ function askQuestions() {
                 case "Intern":
                     addIntern();
                     break;
+
             }
         })
 }
 function addManager() {
-    inquirer.prompt([
-        {
-            type: "input",
-            message: "What is your office number?",
-            name: "officeNumber"
-        }
-    ])
+   inquirer
+        .prompt([
+            {
+                type: "input",
+                message: "What is your office number?",
+                name: "officeNumber"
+            }
+        ])
         .then(res => {
-            const manager = new Manager(res.name, res.id, res.email, res.officeNumber);
+       const manager = new Manager(res.name,res.id,res.email,res.officeNumber);
             team.push(manager);
-            console.log(team);
-        })       
+            // createTeam ();
+            createTeam();
+        })
 }
 
 function addEngineer() {
-    inquirer.prompt([
+    inquirer
+    .prompt([
         {
             type: "input",
             message: "What is your GitHub username?",
@@ -78,26 +104,38 @@ function addEngineer() {
         }
 
     ])
-    .then(res => {
-        const engineer = new Engineer(res.name, res.id, res.email, res.username);
-        team.push(engineer);
-        console.log(team);
-    })
+        .then(res => {
+            const engineer = new Engineer(res.name, res.id, res.email, res.username);
+            team.push(engineer);
+            createTeam();
+
+        })
 }
 
 function addIntern() {
-    inquirer.prompt([
+    inquirer
+    .prompt([
         {
             type: "input",
             message: "What is the name of the school you attend?",
             name: "school"
         }
     ])
-    .then(res => {
-        const intern = new Intern (res.name, res.id, res.email, res.school);
-        team.push(intern);
-        console.log(team);
-    })
+        .then(res => {
+            const intern = new Intern(res.name, res.id, res.email, res.school);
+            team.push(intern);
+            createTeam();
+        })
+}
+
+// function createTeam {
+
+// }
+function buildTeam() {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR);
+    }
+    fs.writeFileSync(outputPath, render(team), "utf-8");
 }
 askQuestions();
 
