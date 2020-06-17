@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const { type } = require("os");
 
 let team = [];
 
@@ -20,29 +21,87 @@ const questions = [
     },
     {
         type: "input",
-        message: "Please employee's id numer:",
+        message: "Please enter employee's id numer:",
         name: "id",
     },
     {
         type: "input",
-        message: "Please enter employee's email:",
+        message: "Please enter employee's email address:",
         name: "email",
     },
     {
         type: "list",
         message: "Select employee's role:",
-        choices: ['Manager', 'Engineer', 'Intern'],
+        choices: ["Manager", "Engineer", "Intern"],
         name: "role"
     }
 ];
-function askQuestions () {
-inquirer
-.prompt(questions)
-.then(function(result){
-    console.log(result);
-})
+
+function askQuestions() {
+    inquirer
+        .prompt(questions)
+        .then(res => {
+            switch (res.role) {
+                case "Manager":
+                    addManager();
+                    break;
+                case "Engineer":
+                    addEngineer();
+                    break;
+                case "Intern":
+                    addIntern();
+                    break;
+            }
+        })
+}
+function addManager() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "What is your office number?",
+            name: "officeNumber"
+        }
+    ])
+        .then(res => {
+            const manager = new Manager(res.name, res.id, res.email, res.officeNumber);
+            team.push(manager);
+            console.log(team);
+        })       
+}
+
+function addEngineer() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "What is your GitHub username?",
+            name: "username"
+        }
+
+    ])
+    .then(res => {
+        const engineer = new Engineer(res.name, res.id, res.email, res.username);
+        team.push(engineer);
+        console.log(team);
+    })
+}
+
+function addIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "What is the name of the school you attend?",
+            name: "school"
+        }
+    ])
+    .then(res => {
+        const intern = new Intern (res.name, res.id, res.email, res.school);
+        team.push(intern);
+        console.log(team);
+    })
 }
 askQuestions();
+
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
