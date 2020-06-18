@@ -1,5 +1,13 @@
 # **Employee Team Generator Template**
 
+<p align="center">
+  
+<img src="https://img.shields.io/npm/dy/silentlad">
+
+<img src="https://img.shields.io/badge/made%20by-KingKitty89-blue.svg" >
+
+</p>
+
 ## **Contributors**
 
 @KingKitty89
