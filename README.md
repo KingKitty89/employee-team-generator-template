@@ -1,6 +1,8 @@
 # **Employee Team Generator Template**
 ------
 
+<img src="./assets/teamgen3.png">
+
 
 <h2 align ="center"><a href ="https://drive.google.com/file/d/1sHz3fhVgzzBhiEI-micH5i6FEsVuYiED/view">Live Demo</a></h2>
 
@@ -35,11 +37,11 @@ This is a command-line application that generates a employee team template based
 
 ## **Screenshots**
 
-![Demo](./assets/teamgen.png)
+<img src="./assets/teamgen.png">
 
-![Demo](./assets/teamgen2.png)
+<img src="./assets/teamgen2.png">
 
-![Demo](./assets/teamgen.gif)
+<img src="./assets/teamgen.gif">
 
 
 
