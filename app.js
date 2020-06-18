@@ -99,7 +99,6 @@ function addManager(data) {
             // createTeam ();
             createTeam();
         });
-
 };
 
 //adds engineer to team and asks the necessary role specific question
