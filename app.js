@@ -42,7 +42,7 @@ function createTeam() {
         .prompt([
             {
                 type: "list",
-                message: "Choose either build team to add team members or create team template:",
+                message: "Choose either Add to Team to add more team members or Finish Team to create your team.",
                 choices: ["Add to Team", "Finish Team"],
                 name: "teamMode"
             }
@@ -83,7 +83,7 @@ function addManager(data) {
         .prompt([
             {
                 type: "input",
-                message: "What is your office number?",
+                message: "Please enter manager's office number:",
                 name: "officeNumber"
             }
         ])
@@ -102,7 +102,7 @@ function addEngineer(data) {
         .prompt([
             {
                 type: "input",
-                message: "What is your GitHub username?",
+                message: "Please enter engineer's GitHub username:",
                 name: "username"
             }
 
@@ -120,7 +120,7 @@ function addIntern(data) {
         .prompt([
             {
                 type: "input",
-                message: "What is the name of the school you attend?",
+                message: "Please enter intern's school:",
                 name: "school"
             }
         ])
