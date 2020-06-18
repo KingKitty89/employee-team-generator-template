@@ -30,15 +30,15 @@ This is a command-line application that generates a employee team template based
 
 ## **Screenshots**
 
-![Demo](./assets/teamgen.png)
+![Demo](/assets/teamgen.png)
 
-![Demo](./assets/teamgen2.png)
+![Demo](/assets/teamgen2.png)
 
-![Demo](./assets/teamgen.gif)
+![Demo](/assets/teamgen.gif)
 
 ## **Tests**
 
-![Demo](./assets/teamgen3.png)
+![Demo](/assets/teamgen3.png)
 
 **[Live Demo](https://drive.google.com/file/d/1sHz3fhVgzzBhiEI-micH5i6FEsVuYiED/view)** 
 
