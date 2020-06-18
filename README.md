@@ -1,5 +1,4 @@
 # **Employee Team Generator Template**
-------
 
 ## **Contributors**
 
@@ -38,6 +37,7 @@ This is a command-line application that generates a employee team template based
 ![Demo](./assets/teamgen.gif)
 
 ## **Tests**
+
 ![Demo](./assets/teamgen3.png)
 
 **[Live Demo](https://drive.google.com/file/d/1sHz3fhVgzzBhiEI-micH5i6FEsVuYiED/view)** 
