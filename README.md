@@ -1,6 +1,8 @@
 # **Employee Team Generator Template**
 ------
+
 <img src="./assets/teamgen3.png">
+
 
 <h2 align ="center"><a href ="https://drive.google.com/file/d/1sHz3fhVgzzBhiEI-micH5i6FEsVuYiED/view">Live Demo</a></h2>
 
